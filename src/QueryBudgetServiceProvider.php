@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ChakraCoder\QueryBudget;
 
+use ChakraCoder\QueryBudget\Http\Middleware\EnforceQueryBudget;
 use ChakraCoder\QueryBudget\Recording\CallerResolver;
 use ChakraCoder\QueryBudget\Recording\QueryRecorder;
 use ChakraCoder\QueryBudget\Recording\SqlNormalizer;
@@ -13,6 +14,7 @@ use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\Events\QueryExecuted;
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use LogicException;
 
@@ -50,6 +52,8 @@ final class QueryBudgetServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/query-budget.php' => $this->app->configPath('query-budget.php'),
         ], self::CONFIG_TAG);
+
+        $this->resolve(Router::class)->aliasMiddleware(self::MIDDLEWARE_ALIAS, EnforceQueryBudget::class);
 
         $recorder = $this->resolve(QueryRecorder::class);
 
