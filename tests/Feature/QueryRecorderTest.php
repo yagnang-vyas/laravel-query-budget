@@ -6,6 +6,7 @@ use ChakraCoder\QueryBudget\Recording\CallerResolver;
 use ChakraCoder\QueryBudget\Recording\QueryRecorder;
 use ChakraCoder\QueryBudget\Tests\Fixtures\Models\Author;
 use ChakraCoder\QueryBudget\Tests\Fixtures\Models\Post;
+use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
@@ -165,4 +166,48 @@ it('uses the settings that were active when the outermost scope opened', functio
     $log = $this->recorder->stop($token);
 
     expect($log)->toHaveCount(1);
+});
+
+it('does not retain queries once a scope is closed', function (): void {
+    $run = function (): void {
+        for ($scope = 0; $scope < 20; $scope++) {
+            $this->recorder->record(function (): void {
+                for ($i = 0; $i < 100; $i++) {
+                    DB::select('select 1');
+                }
+            });
+        }
+    };
+
+    $run();
+    gc_collect_cycles();
+    $before = memory_get_usage();
+
+    $run();
+    gc_collect_cycles();
+
+    expect(memory_get_usage() - $before)->toBeLessThan(256 * 1024)
+        ->and($this->recorder->isRecording())->toBeFalse();
+});
+
+it('does no work for events that arrive while no scope is open', function (): void {
+    $connection = DB::connection();
+    $event = new QueryExecuted("select * from t where a = 'secret'", ['secret'], 1.0, $connection);
+
+    $this->recorder->handle($event);
+
+    $token = $this->recorder->start();
+    $log = $this->recorder->stop($token);
+
+    expect($log)->toHaveCount(0);
+});
+
+it('treats a missing execution time as zero', function (): void {
+    $event = new QueryExecuted('select 1', [], null, DB::connection());
+
+    $token = $this->recorder->start();
+    $this->recorder->handle($event);
+    $log = $this->recorder->stop($token);
+
+    expect($log->all()[0]->timeMs)->toBe(0.0);
 });

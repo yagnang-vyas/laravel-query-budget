@@ -22,7 +22,9 @@ The official Laravel release policy page was not reachable from the build enviro
 | 12.x (`^12.0`, released 2025-02-24) | 8.2, 8.3, 8.4, 8.5 | supported (security fixes until Feb 2027) |
 | 11.x and older | | not supported (11.x was released 2024-03-12, so its two years of security fixes ended in March 2026) |
 
-`composer.json` requires `php ^8.2`, `illuminate/{contracts,database,http,log,routing,support} ^12.0 || ^13.0`. Laravel 13 itself requires PHP 8.3, so Composer resolves the right pairs and CI excludes PHP 8.2 with Laravel 13. Dev tooling: Testbench `^10 || ^11`, Pest `^3 || ^4`, Larastan `^3.0`, Pint `^1.18`.
+`composer.json` requires `php ^8.2`, `illuminate/{contracts,database,http,log,routing,support} ^12.0 || ^13.0`. Laravel 13 itself requires PHP 8.3, so Composer resolves the right pairs and CI excludes PHP 8.2 with Laravel 13. Dev tooling: Testbench `^10 || ^11`, Pest `^3 || ^4`, Larastan `^3.1`, Pint `^1.25`.
+
+Locally verified on PHP 8.3 with `composer check`: Laravel 12.0.1 (prefer-lowest), 12.70.1, 13.0.0 (prefer-lowest) and 13.38.0 (prefer-stable). PHP 8.2, 8.4 and 8.5 are covered by the CI matrix only.
 
 ### Behaviour
 
@@ -66,6 +68,12 @@ The official Laravel release policy page was not reachable from the build enviro
 2. Production is fully disabled by default: the middleware only acts when `enabled` is true **and** the environment is in `enabled_environments` (`local`, `testing`). Otherwise it is a pass-through that never opens a recording scope, even when a route declares a budget.
 3. Recording is inert (immediate return) while no scope is open.
 4. Closing a scope releases its queries; scopes close in `finally` blocks.
+
+## Performance (measured on the build machine, SQLite in memory, PHP 8.3)
+
+- 20,000 `select 1` queries with the package's listener registered but no scope open: 293 ms and 298 ms across two runs, against 300 ms and 265 ms with no listener at all: no measurable difference.
+- Recording 5,000 queries inside a scope: about 0.03 ms per query (dominated by `debug_backtrace`).
+- 50 scopes of 200 queries each: no retained memory after the scopes closed (covered by a test).
 
 ## Testing strategy
 
