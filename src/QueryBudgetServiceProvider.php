@@ -8,6 +8,7 @@ use ChakraCoder\QueryBudget\Recording\CallerResolver;
 use ChakraCoder\QueryBudget\Recording\QueryRecorder;
 use ChakraCoder\QueryBudget\Recording\SqlNormalizer;
 use ChakraCoder\QueryBudget\Support\Settings;
+use ChakraCoder\QueryBudget\Testing\PestExpectations;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Foundation\Application;
@@ -34,6 +35,11 @@ final class QueryBudgetServiceProvider extends ServiceProvider
             $this->resolve(CallerResolver::class),
             $this->resolve(Repository::class),
         ));
+
+        $this->app->singleton(QueryBudgetManager::class, fn (): QueryBudgetManager => new QueryBudgetManager(
+            $this->resolve(QueryRecorder::class),
+            $this->resolve(Repository::class),
+        ));
     }
 
     public function boot(): void
@@ -53,6 +59,8 @@ final class QueryBudgetServiceProvider extends ServiceProvider
                 $recorder->handle($event);
             },
         );
+
+        (new PestExpectations)->register();
     }
 
     /**

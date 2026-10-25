@@ -2,6 +2,6 @@
 
 declare(strict_types=1);
 
-use ChakraCoder\QueryBudget\Tests\TestCase;
+use ChakraCoder\QueryBudget\Tests\Fixtures\Support\BudgetAssertingTestCase;
 
-uses(TestCase::class)->in('Feature');
+uses(BudgetAssertingTestCase::class)->in('Feature');
