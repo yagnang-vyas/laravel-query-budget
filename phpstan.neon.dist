@@ -3,6 +3,11 @@ includes:
 
 parameters:
     level: max
+    # Property and return types of several Laravel classes are PHPDoc-only and differ between the supported
+    # Laravel versions (for example QueryExecuted::$time), so PHPDoc types are not treated as certain.
+    treatPhpDocTypesAsCertain: false
     paths:
         - src
+        # Contains a test case that uses the AssertsQueryBudget trait, which PHPStan only analyses once it is used.
+        - tests/Fixtures/Support
     tmpDir: .phpstan.cache
