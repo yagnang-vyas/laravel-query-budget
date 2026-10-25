@@ -4,8 +4,14 @@ declare(strict_types=1);
 
 namespace ChakraCoder\QueryBudget;
 
+use ChakraCoder\QueryBudget\Recording\CallerResolver;
+use ChakraCoder\QueryBudget\Recording\QueryRecorder;
+use ChakraCoder\QueryBudget\Recording\SqlNormalizer;
 use ChakraCoder\QueryBudget\Support\Settings;
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Support\ServiceProvider;
 use LogicException;
 
@@ -18,6 +24,16 @@ final class QueryBudgetServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/query-budget.php', 'query-budget');
+
+        $this->app->singleton(SqlNormalizer::class);
+
+        $this->app->singleton(CallerResolver::class, fn (Application $app): CallerResolver => new CallerResolver($app->basePath()));
+
+        $this->app->singleton(QueryRecorder::class, fn (): QueryRecorder => new QueryRecorder(
+            $this->resolve(SqlNormalizer::class),
+            $this->resolve(CallerResolver::class),
+            $this->resolve(Repository::class),
+        ));
     }
 
     public function boot(): void
@@ -28,6 +44,15 @@ final class QueryBudgetServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/query-budget.php' => $this->app->configPath('query-budget.php'),
         ], self::CONFIG_TAG);
+
+        $recorder = $this->resolve(QueryRecorder::class);
+
+        $this->resolve(Dispatcher::class)->listen(
+            QueryExecuted::class,
+            static function (QueryExecuted $event) use ($recorder): void {
+                $recorder->handle($event);
+            },
+        );
     }
 
     /**
