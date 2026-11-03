@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Recording;
+namespace YagnangVyas\QueryBudget\Recording;
 
 /**
  * Turns SQL into a stable, privacy-safe form so equal statements group together.

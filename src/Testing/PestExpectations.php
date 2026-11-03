@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Testing;
+namespace YagnangVyas\QueryBudget\Testing;
 
-use ChakraCoder\QueryBudget\Analysis\BudgetReport;
-use ChakraCoder\QueryBudget\Exceptions\QueryBudgetExpectationFailed;
-use ChakraCoder\QueryBudget\Facades\QueryBudget;
+use YagnangVyas\QueryBudget\Analysis\BudgetReport;
+use YagnangVyas\QueryBudget\Exceptions\QueryBudgetExpectationFailed;
+use YagnangVyas\QueryBudget\Facades\QueryBudget;
 use Closure;
 use InvalidArgumentException;
 use Pest\Expectation;

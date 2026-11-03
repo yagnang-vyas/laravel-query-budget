@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Exceptions;
+namespace YagnangVyas\QueryBudget\Exceptions;
 
-use ChakraCoder\QueryBudget\Analysis\BudgetReport;
+use YagnangVyas\QueryBudget\Analysis\BudgetReport;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use RuntimeException;

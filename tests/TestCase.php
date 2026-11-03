@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Tests;
+namespace YagnangVyas\QueryBudget\Tests;
 
-use ChakraCoder\QueryBudget\QueryBudgetServiceProvider;
-use ChakraCoder\QueryBudget\Tests\Fixtures\Models\Comment;
-use ChakraCoder\QueryBudget\Tests\Fixtures\Models\Post;
+use YagnangVyas\QueryBudget\QueryBudgetServiceProvider;
+use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Comment;
+use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Post;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Foundation\Application;
 use Illuminate\Routing\Router;

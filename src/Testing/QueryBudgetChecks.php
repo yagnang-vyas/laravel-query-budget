@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Testing;
+namespace YagnangVyas\QueryBudget\Testing;
 
-use ChakraCoder\QueryBudget\Analysis\BudgetReport;
+use YagnangVyas\QueryBudget\Analysis\BudgetReport;
 use PHPUnit\Framework\Assert;
 
 /**

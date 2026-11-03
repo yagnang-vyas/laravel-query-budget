@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Recording;
+namespace YagnangVyas\QueryBudget\Recording;
 
-use ChakraCoder\QueryBudget\Support\Settings;
+use YagnangVyas\QueryBudget\Support\Settings;
 use Closure;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Database\Events\QueryExecuted;

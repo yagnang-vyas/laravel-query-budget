@@ -1,9 +1,13 @@
 # Changelog
 
-All notable changes to `chakracoder/laravel-query-budget` are documented here.
+All notable changes to `yagnang-vyas/laravel-query-budget` are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+
+### Changed
+
+- Package renamed to `yagnang-vyas/laravel-query-budget` and root namespace to `YagnangVyas\QueryBudget` before the first release, so the Composer vendor, GitHub owner and namespace match.
 
 ## [0.1.0] - Unreleased
 

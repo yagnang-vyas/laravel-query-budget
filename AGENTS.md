@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Guidance for AI coding agents and contributors working on `chakracoder/laravel-query-budget`.
+Guidance for AI coding agents and contributors working on `yagnang-vyas/laravel-query-budget`.
 
 ## What this package does
 

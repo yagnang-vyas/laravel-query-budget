@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use ChakraCoder\QueryBudget\Recording\CallerResolver;
-use ChakraCoder\QueryBudget\Recording\QueryRecorder;
-use ChakraCoder\QueryBudget\Tests\Fixtures\Models\Author;
-use ChakraCoder\QueryBudget\Tests\Fixtures\Models\Post;
+use YagnangVyas\QueryBudget\Recording\CallerResolver;
+use YagnangVyas\QueryBudget\Recording\QueryRecorder;
+use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Author;
+use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Post;
 use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;

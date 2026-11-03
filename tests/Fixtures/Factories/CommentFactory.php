@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Tests\Fixtures\Factories;
+namespace YagnangVyas\QueryBudget\Tests\Fixtures\Factories;
 
-use ChakraCoder\QueryBudget\Tests\Fixtures\Models\Comment;
+use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Comment;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

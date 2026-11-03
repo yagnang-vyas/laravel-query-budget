@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use ChakraCoder\QueryBudget\Support\EnforcementMode;
-use ChakraCoder\QueryBudget\Support\Settings;
+use YagnangVyas\QueryBudget\Support\EnforcementMode;
+use YagnangVyas\QueryBudget\Support\Settings;
 use Illuminate\Config\Repository;
 
 function validConfig(array $overrides = []): array

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use ChakraCoder\QueryBudget\Recording\SqlNormalizer;
+use YagnangVyas\QueryBudget\Recording\SqlNormalizer;
 
 beforeEach(function (): void {
     $this->normalizer = new SqlNormalizer;

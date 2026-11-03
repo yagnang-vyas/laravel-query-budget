@@ -1,6 +1,6 @@
 # Laravel Query Budget: Specification
 
-Package: `chakracoder/laravel-query-budget` · Namespace: `ChakraCoder\QueryBudget` · Version: 0.1.0
+Package: `yagnang-vyas/laravel-query-budget` · Namespace: `YagnangVyas\QueryBudget` · Version: 0.1.0
 
 ## Purpose
 

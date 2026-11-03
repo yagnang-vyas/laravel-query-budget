@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use ChakraCoder\QueryBudget\Tests\Fixtures\Controllers\PostController;
+use YagnangVyas\QueryBudget\Tests\Fixtures\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/posts-lazy', [PostController::class, 'lazy']);

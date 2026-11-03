@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Recording;
+namespace YagnangVyas\QueryBudget\Recording;
 
 /**
  * A single executed query. Binding values are never stored, only their number.

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use ChakraCoder\QueryBudget\Exceptions\QueryBudgetExceeded;
+use YagnangVyas\QueryBudget\Exceptions\QueryBudgetExceeded;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\Framework\AssertionFailedError;
