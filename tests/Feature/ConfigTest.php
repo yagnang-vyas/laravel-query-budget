@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use YagnangVyas\QueryBudget\QueryBudgetServiceProvider;
 use Illuminate\Support\ServiceProvider;
+use YagnangVyas\QueryBudget\QueryBudgetServiceProvider;
 
 it('publishes the config file under the query-budget-config tag', function (): void {
     $paths = ServiceProvider::pathsToPublish(QueryBudgetServiceProvider::class, 'query-budget-config');

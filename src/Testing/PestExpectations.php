@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace YagnangVyas\QueryBudget\Testing;
 
-use YagnangVyas\QueryBudget\Analysis\BudgetReport;
-use YagnangVyas\QueryBudget\Exceptions\QueryBudgetExpectationFailed;
-use YagnangVyas\QueryBudget\Facades\QueryBudget;
 use Closure;
 use InvalidArgumentException;
 use Pest\Expectation;
 use PHPUnit\Framework\ExpectationFailedException;
+use YagnangVyas\QueryBudget\Analysis\BudgetReport;
+use YagnangVyas\QueryBudget\Exceptions\QueryBudgetExpectationFailed;
+use YagnangVyas\QueryBudget\Facades\QueryBudget;
 
 /**
  * Registers the query budget expectations when Pest is present:

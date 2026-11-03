@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace YagnangVyas\QueryBudget\Testing;
 
-use YagnangVyas\QueryBudget\Analysis\BudgetReport;
 use PHPUnit\Framework\Assert;
+use YagnangVyas\QueryBudget\Analysis\BudgetReport;
 
 /**
  * Shared pass/fail logic and failure messages for the PHPUnit trait and the Pest expectations.

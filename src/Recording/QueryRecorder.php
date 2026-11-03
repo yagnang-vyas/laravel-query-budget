@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace YagnangVyas\QueryBudget\Recording;
 
-use YagnangVyas\QueryBudget\Support\Settings;
 use Closure;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Database\Events\QueryExecuted;
 use LogicException;
+use YagnangVyas\QueryBudget\Support\Settings;
 
 /**
  * Captures executed queries, but only while at least one recording scope is open.

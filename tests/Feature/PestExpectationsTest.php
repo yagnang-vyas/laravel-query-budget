@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
+use PHPUnit\Framework\ExpectationFailedException;
 use YagnangVyas\QueryBudget\Exceptions\QueryBudgetExpectationFailed;
 use YagnangVyas\QueryBudget\Testing\PestExpectations;
-use PHPUnit\Framework\ExpectationFailedException;
 
 beforeEach(function (): void {
     $this->seedBlog(3, 2);

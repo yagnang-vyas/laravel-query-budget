@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use YagnangVyas\QueryBudget\Exceptions\QueryBudgetExceeded;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\Framework\AssertionFailedError;
+use YagnangVyas\QueryBudget\Exceptions\QueryBudgetExceeded;
 
 it('never exposes binding values or inline literals in reports', function (): void {
     $report = $this->recordQueries(function (): void {

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace YagnangVyas\QueryBudget\Exceptions;
 
-use YagnangVyas\QueryBudget\Analysis\BudgetReport;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use RuntimeException;
+use YagnangVyas\QueryBudget\Analysis\BudgetReport;
 
 final class QueryBudgetExceeded extends RuntimeException
 {

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-use YagnangVyas\QueryBudget\Exceptions\QueryBudgetExceeded;
-use YagnangVyas\QueryBudget\Http\Middleware\EnforceQueryBudget;
-use YagnangVyas\QueryBudget\Recording\QueryRecorder;
-use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Post;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Monolog\Handler\TestHandler;
+use YagnangVyas\QueryBudget\Exceptions\QueryBudgetExceeded;
+use YagnangVyas\QueryBudget\Http\Middleware\EnforceQueryBudget;
+use YagnangVyas\QueryBudget\Recording\QueryRecorder;
+use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Post;
 
 beforeEach(function (): void {
     $this->seedBlog(3, 2);

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
+use Illuminate\Routing\Router;
 use YagnangVyas\QueryBudget\Facades\QueryBudget;
 use YagnangVyas\QueryBudget\Http\Middleware\EnforceQueryBudget;
 use YagnangVyas\QueryBudget\QueryBudgetManager;
 use YagnangVyas\QueryBudget\Recording\QueryRecorder;
 use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Comment;
-use Illuminate\Routing\Router;
 
 it('registers the middleware alias', function (): void {
     expect($this->app->make(Router::class)->getMiddleware())
