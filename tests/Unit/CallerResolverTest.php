@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use ChakraCoder\QueryBudget\Recording\CallerResolver;
+use YagnangVyas\QueryBudget\Recording\CallerResolver;
 
 function frame(string $file, int $line): array
 {

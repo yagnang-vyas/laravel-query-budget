@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use ChakraCoder\QueryBudget\Exceptions\QueryBudgetExpectationFailed;
-use ChakraCoder\QueryBudget\Testing\PestExpectations;
+use YagnangVyas\QueryBudget\Exceptions\QueryBudgetExpectationFailed;
+use YagnangVyas\QueryBudget\Testing\PestExpectations;
 use PHPUnit\Framework\ExpectationFailedException;
 
 beforeEach(function (): void {

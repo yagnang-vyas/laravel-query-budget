@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-use ChakraCoder\QueryBudget\Analysis\BudgetReport;
-use ChakraCoder\QueryBudget\Analysis\DuplicateDetector;
-use ChakraCoder\QueryBudget\Analysis\NPlusOneDetector;
-use ChakraCoder\QueryBudget\Recording\QueryLog;
-use ChakraCoder\QueryBudget\Recording\RecordedQuery;
+use YagnangVyas\QueryBudget\Analysis\BudgetReport;
+use YagnangVyas\QueryBudget\Analysis\DuplicateDetector;
+use YagnangVyas\QueryBudget\Analysis\NPlusOneDetector;
+use YagnangVyas\QueryBudget\Recording\QueryLog;
+use YagnangVyas\QueryBudget\Recording\RecordedQuery;
 
 function logOf(RecordedQuery ...$queries): QueryLog
 {

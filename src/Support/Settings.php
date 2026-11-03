@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Support;
+namespace YagnangVyas\QueryBudget\Support;
 
 use Illuminate\Contracts\Config\Repository;
 use InvalidArgumentException;

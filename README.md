@@ -1,5 +1,8 @@
 # Laravel Query Budget
 
+[![CI](https://github.com/yagnang-vyas/laravel-query-budget/actions/workflows/ci.yml/badge.svg)](https://github.com/yagnang-vyas/laravel-query-budget/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Make database query counts, duplicate queries and N+1 patterns **assertable in tests** and **enforceable per route** in local development and CI.
 
 N+1 queries pass code review because nothing fails. They show up in production, under load. Laravel Query Budget turns query efficiency into something your test suite and your routes can check, with reports that tell you *which* statement repeated and *where*.
@@ -33,7 +36,7 @@ The package is not on Packagist yet. Until it is, install it from the Git reposi
 ```
 
 ```bash
-composer require --dev chakracoder/laravel-query-budget
+composer require --dev yagnang-vyas/laravel-query-budget
 ```
 
 The service provider and the `QueryBudget` facade are auto-discovered. If you use the middleware outside `local` and `testing`, require the package without `--dev`.
@@ -49,7 +52,7 @@ php artisan vendor:publish --tag=query-budget-config
 Add the trait to a test case (in Pest, `uses(AssertsQueryBudget::class)->in('Feature')` in `tests/Pest.php`):
 
 ```php
-use ChakraCoder\QueryBudget\Testing\AssertsQueryBudget;
+use YagnangVyas\QueryBudget\Testing\AssertsQueryBudget;
 
 class PostIndexTest extends TestCase
 {
@@ -125,7 +128,7 @@ Use the `query.budget` alias on a route or group, with the maximum number of que
 Route::get('/posts', [PostController::class, 'index'])->middleware('query.budget:10');
 ```
 
-or add `ChakraCoder\QueryBudget\Http\Middleware\EnforceQueryBudget::class` to your global middleware and set `default_budget` in the config. Without a number the route has no count limit, but duplicate and N+1 detection still apply.
+or add `YagnangVyas\QueryBudget\Http\Middleware\EnforceQueryBudget::class` to your global middleware and set `default_budget` in the config. Without a number the route has no count limit, but duplicate and N+1 detection still apply.
 
 A request violates its budget when it runs more queries than allowed, or (with `detect_duplicates` / `detect_n_plus_one` enabled) repeats a statement or shows an N+1 pattern. What happens next depends on `mode`:
 
@@ -187,7 +190,7 @@ The assertions always run, regardless of `enabled` and the environment, and use 
 ## Facade
 
 ```php
-use ChakraCoder\QueryBudget\Facades\QueryBudget;
+use YagnangVyas\QueryBudget\Facades\QueryBudget;
 
 $report = QueryBudget::measure(fn () => $service->handle());
 

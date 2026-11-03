@@ -1,9 +1,14 @@
 {
-    "name": "chakracoder/laravel-query-budget",
+    "name": "yagnang-vyas/laravel-query-budget",
     "description": "Query budgets for Laravel: assert query counts, duplicates and N+1 patterns in tests and enforce per-route budgets in local and CI environments.",
     "type": "library",
     "license": "MIT",
-    "keywords": ["laravel", "n-plus-one", "database", "queries", "testing", "pest", "phpunit", "performance"],
+    "homepage": "https://github.com/yagnang-vyas/laravel-query-budget",
+    "keywords": ["laravel", "n-plus-one", "database", "queries", "testing", "pest", "phpunit", "performance", "query-budget"],
+    "support": {
+        "issues": "https://github.com/yagnang-vyas/laravel-query-budget/issues",
+        "source": "https://github.com/yagnang-vyas/laravel-query-budget"
+    },
     "authors": [
         {
             "name": "Yagnang Vyas",
@@ -28,12 +33,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ChakraCoder\\QueryBudget\\": "src/"
+            "YagnangVyas\\QueryBudget\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ChakraCoder\\QueryBudget\\Tests\\": "tests/"
+            "YagnangVyas\\QueryBudget\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -51,10 +56,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ChakraCoder\\QueryBudget\\QueryBudgetServiceProvider"
+                "YagnangVyas\\QueryBudget\\QueryBudgetServiceProvider"
             ],
             "aliases": {
-                "QueryBudget": "ChakraCoder\\QueryBudget\\Facades\\QueryBudget"
+                "QueryBudget": "YagnangVyas\\QueryBudget\\Facades\\QueryBudget"
             }
         }
     },

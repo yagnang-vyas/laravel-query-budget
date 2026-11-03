@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Http\Middleware;
+namespace YagnangVyas\QueryBudget\Http\Middleware;
 
-use ChakraCoder\QueryBudget\Analysis\BudgetReport;
-use ChakraCoder\QueryBudget\Exceptions\QueryBudgetExceeded;
-use ChakraCoder\QueryBudget\QueryBudgetManager;
-use ChakraCoder\QueryBudget\Support\EnforcementMode;
-use ChakraCoder\QueryBudget\Support\Settings;
+use YagnangVyas\QueryBudget\Analysis\BudgetReport;
+use YagnangVyas\QueryBudget\Exceptions\QueryBudgetExceeded;
+use YagnangVyas\QueryBudget\QueryBudgetManager;
+use YagnangVyas\QueryBudget\Support\EnforcementMode;
+use YagnangVyas\QueryBudget\Support\Settings;
 use Closure;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Foundation\Application;

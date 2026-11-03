@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Analysis;
+namespace YagnangVyas\QueryBudget\Analysis;
 
-use ChakraCoder\QueryBudget\Recording\QueryLog;
+use YagnangVyas\QueryBudget\Recording\QueryLog;
 
 final class DuplicateDetector
 {

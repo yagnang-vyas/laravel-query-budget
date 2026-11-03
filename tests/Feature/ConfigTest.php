@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use ChakraCoder\QueryBudget\QueryBudgetServiceProvider;
+use YagnangVyas\QueryBudget\QueryBudgetServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
 it('publishes the config file under the query-budget-config tag', function (): void {

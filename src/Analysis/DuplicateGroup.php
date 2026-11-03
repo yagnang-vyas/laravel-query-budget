@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Analysis;
+namespace YagnangVyas\QueryBudget\Analysis;
 
 /**
  * One statement that was executed more often than the duplicate threshold allows.

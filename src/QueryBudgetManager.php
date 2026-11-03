@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget;
+namespace YagnangVyas\QueryBudget;
 
-use ChakraCoder\QueryBudget\Analysis\BudgetReport;
-use ChakraCoder\QueryBudget\Recording\QueryLog;
-use ChakraCoder\QueryBudget\Recording\QueryRecorder;
-use ChakraCoder\QueryBudget\Support\Settings;
+use YagnangVyas\QueryBudget\Analysis\BudgetReport;
+use YagnangVyas\QueryBudget\Recording\QueryLog;
+use YagnangVyas\QueryBudget\Recording\QueryRecorder;
+use YagnangVyas\QueryBudget\Support\Settings;
 use Closure;
 use Illuminate\Contracts\Config\Repository;
 

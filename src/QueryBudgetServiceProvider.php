@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget;
+namespace YagnangVyas\QueryBudget;
 
-use ChakraCoder\QueryBudget\Http\Middleware\EnforceQueryBudget;
-use ChakraCoder\QueryBudget\Recording\CallerResolver;
-use ChakraCoder\QueryBudget\Recording\QueryRecorder;
-use ChakraCoder\QueryBudget\Recording\SqlNormalizer;
-use ChakraCoder\QueryBudget\Support\Settings;
-use ChakraCoder\QueryBudget\Testing\PestExpectations;
+use YagnangVyas\QueryBudget\Http\Middleware\EnforceQueryBudget;
+use YagnangVyas\QueryBudget\Recording\CallerResolver;
+use YagnangVyas\QueryBudget\Recording\QueryRecorder;
+use YagnangVyas\QueryBudget\Recording\SqlNormalizer;
+use YagnangVyas\QueryBudget\Support\Settings;
+use YagnangVyas\QueryBudget\Testing\PestExpectations;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Foundation\Application;

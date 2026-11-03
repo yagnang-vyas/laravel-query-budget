@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Exceptions;
+namespace YagnangVyas\QueryBudget\Exceptions;
 
 use RuntimeException;
 

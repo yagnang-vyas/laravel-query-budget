@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Tests\Fixtures\Controllers;
+namespace YagnangVyas\QueryBudget\Tests\Fixtures\Controllers;
 
-use ChakraCoder\QueryBudget\Tests\Fixtures\Models\Comment;
-use ChakraCoder\QueryBudget\Tests\Fixtures\Models\Post;
+use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Comment;
+use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Post;
 use Illuminate\Http\JsonResponse;
 
 class PostController

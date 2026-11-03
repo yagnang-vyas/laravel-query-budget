@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Analysis;
+namespace YagnangVyas\QueryBudget\Analysis;
 
 /**
  * One statement executed repeatedly from the same caller line, the signature of an N+1 problem.

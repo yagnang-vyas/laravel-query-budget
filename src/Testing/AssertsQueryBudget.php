@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ChakraCoder\QueryBudget\Testing;
+namespace YagnangVyas\QueryBudget\Testing;
 
-use ChakraCoder\QueryBudget\Analysis\BudgetReport;
-use ChakraCoder\QueryBudget\QueryBudgetManager;
+use YagnangVyas\QueryBudget\Analysis\BudgetReport;
+use YagnangVyas\QueryBudget\QueryBudgetManager;
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
 use LogicException;
