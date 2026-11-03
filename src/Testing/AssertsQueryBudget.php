@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace YagnangVyas\QueryBudget\Testing;
 
-use YagnangVyas\QueryBudget\Analysis\BudgetReport;
-use YagnangVyas\QueryBudget\QueryBudgetManager;
 use Closure;
 use Illuminate\Contracts\Foundation\Application;
 use LogicException;
 use PHPUnit\Framework\Assert;
+use YagnangVyas\QueryBudget\Analysis\BudgetReport;
+use YagnangVyas\QueryBudget\QueryBudgetManager;
 
 /**
  * Query budget assertions for Laravel feature tests (PHPUnit and Pest).

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace YagnangVyas\QueryBudget\Tests\Fixtures\Factories;
 
-use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Author;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Author;
 
 /**
  * @extends Factory<Author>

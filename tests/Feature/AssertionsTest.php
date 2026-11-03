@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
+use Illuminate\Support\Facades\DB;
+use PHPUnit\Framework\AssertionFailedError;
+use PHPUnit\Framework\TestCase;
 use YagnangVyas\QueryBudget\Analysis\BudgetReport;
 use YagnangVyas\QueryBudget\Testing\AssertsQueryBudget;
 use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Comment;
 use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Post;
-use Illuminate\Support\Facades\DB;
-use PHPUnit\Framework\AssertionFailedError;
-use PHPUnit\Framework\TestCase;
 
 beforeEach(function (): void {
     $this->seedBlog(3, 2);

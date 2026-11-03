@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace YagnangVyas\QueryBudget;
 
+use Closure;
+use Illuminate\Contracts\Config\Repository;
 use YagnangVyas\QueryBudget\Analysis\BudgetReport;
 use YagnangVyas\QueryBudget\Recording\QueryLog;
 use YagnangVyas\QueryBudget\Recording\QueryRecorder;
 use YagnangVyas\QueryBudget\Support\Settings;
-use Closure;
-use Illuminate\Contracts\Config\Repository;
 
 /**
  * Entry point behind the QueryBudget facade: record a callback and analyse the result

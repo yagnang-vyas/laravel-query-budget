@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
+use Illuminate\Database\Events\QueryExecuted;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use YagnangVyas\QueryBudget\Recording\CallerResolver;
 use YagnangVyas\QueryBudget\Recording\QueryRecorder;
 use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Author;
 use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Post;
-use Illuminate\Database\Events\QueryExecuted;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 
 beforeEach(function (): void {
     $this->recorder = $this->app->make(QueryRecorder::class);

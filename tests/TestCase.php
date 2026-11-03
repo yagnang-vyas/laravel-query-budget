@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace YagnangVyas\QueryBudget\Tests;
 
-use YagnangVyas\QueryBudget\QueryBudgetServiceProvider;
-use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Comment;
-use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Post;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Foundation\Application;
 use Illuminate\Routing\Router;
 use Orchestra\Testbench\TestCase as Orchestra;
+use YagnangVyas\QueryBudget\QueryBudgetServiceProvider;
+use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Comment;
+use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Post;
 
 abstract class TestCase extends Orchestra
 {

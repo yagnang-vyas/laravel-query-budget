@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace YagnangVyas\QueryBudget\Analysis;
 
+use Stringable;
 use YagnangVyas\QueryBudget\Recording\QueryLog;
 use YagnangVyas\QueryBudget\Recording\RecordedQuery;
-use Stringable;
 
 /**
  * Summary of one recording scope. Contains normalized SQL, counts and caller

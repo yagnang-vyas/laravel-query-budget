@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use YagnangVyas\QueryBudget\Tests\Fixtures\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use YagnangVyas\QueryBudget\Tests\Fixtures\Controllers\PostController;
 
 Route::get('/posts-lazy', [PostController::class, 'lazy']);
 Route::get('/posts-eager', [PostController::class, 'eager']);

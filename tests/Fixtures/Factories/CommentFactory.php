@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace YagnangVyas\QueryBudget\Tests\Fixtures\Factories;
 
-use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Comment;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use YagnangVyas\QueryBudget\Tests\Fixtures\Models\Comment;
 
 /**
  * @extends Factory<Comment>

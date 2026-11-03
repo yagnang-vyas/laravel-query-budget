@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
+use Illuminate\Config\Repository;
 use YagnangVyas\QueryBudget\Support\EnforcementMode;
 use YagnangVyas\QueryBudget\Support\Settings;
-use Illuminate\Config\Repository;
 
 function validConfig(array $overrides = []): array
 {

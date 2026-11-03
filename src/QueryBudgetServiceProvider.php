@@ -4,12 +4,6 @@ declare(strict_types=1);
 
 namespace YagnangVyas\QueryBudget;
 
-use YagnangVyas\QueryBudget\Http\Middleware\EnforceQueryBudget;
-use YagnangVyas\QueryBudget\Recording\CallerResolver;
-use YagnangVyas\QueryBudget\Recording\QueryRecorder;
-use YagnangVyas\QueryBudget\Recording\SqlNormalizer;
-use YagnangVyas\QueryBudget\Support\Settings;
-use YagnangVyas\QueryBudget\Testing\PestExpectations;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Foundation\Application;
@@ -17,6 +11,12 @@ use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use LogicException;
+use YagnangVyas\QueryBudget\Http\Middleware\EnforceQueryBudget;
+use YagnangVyas\QueryBudget\Recording\CallerResolver;
+use YagnangVyas\QueryBudget\Recording\QueryRecorder;
+use YagnangVyas\QueryBudget\Recording\SqlNormalizer;
+use YagnangVyas\QueryBudget\Support\Settings;
+use YagnangVyas\QueryBudget\Testing\PestExpectations;
 
 final class QueryBudgetServiceProvider extends ServiceProvider
 {

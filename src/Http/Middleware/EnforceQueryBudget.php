@@ -4,11 +4,6 @@ declare(strict_types=1);
 
 namespace YagnangVyas\QueryBudget\Http\Middleware;
 
-use YagnangVyas\QueryBudget\Analysis\BudgetReport;
-use YagnangVyas\QueryBudget\Exceptions\QueryBudgetExceeded;
-use YagnangVyas\QueryBudget\QueryBudgetManager;
-use YagnangVyas\QueryBudget\Support\EnforcementMode;
-use YagnangVyas\QueryBudget\Support\Settings;
 use Closure;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Foundation\Application;
@@ -16,6 +11,11 @@ use Illuminate\Http\Request;
 use Illuminate\Log\LogManager;
 use InvalidArgumentException;
 use Symfony\Component\HttpFoundation\Response;
+use YagnangVyas\QueryBudget\Analysis\BudgetReport;
+use YagnangVyas\QueryBudget\Exceptions\QueryBudgetExceeded;
+use YagnangVyas\QueryBudget\QueryBudgetManager;
+use YagnangVyas\QueryBudget\Support\EnforcementMode;
+use YagnangVyas\QueryBudget\Support\Settings;
 
 /**
  * Enforces a query budget for a request: `->middleware('query.budget:20')`.
